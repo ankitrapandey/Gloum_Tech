@@ -1,7 +1,6 @@
 
 
 
-
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Box, IconButton, Button, Menu, MenuItem, Drawer, List, ListItem, ListItemText, Collapse, Link as MuiLink } from '@mui/material';
 import { styled } from '@mui/system';
@@ -35,6 +34,13 @@ const DropdownItem = styled(MenuItem)({
     },
 });
 
+// New style for ListItemText to have red hover effect
+const StyledListItemText = styled(ListItemText)({
+    '&:hover': {
+        color: '#FF0000', // Red color on hover for mobile menu items
+    },
+});
+
 const Logo = styled(Typography)({
     fontFamily: 'Arial, sans-serif',
     fontSize: '24px',
@@ -53,10 +59,8 @@ const SocialIconButton = styled(IconButton)({
 });
 
 function GloumNavbar() {
-
     const [anchorCompany, setAnchorCompany] = useState(null);
     const [mobileOpen, setMobileOpen] = useState(false);
-
     const [OurCompany, setOurCompany] = useState(false);
 
     const handleDropdownClick = (setAnchor) => (event) => {
@@ -64,7 +68,6 @@ function GloumNavbar() {
     };
 
     const handleClose = () => {
-       
         setAnchorCompany(null);
     };
 
@@ -91,35 +94,30 @@ function GloumNavbar() {
                     <Box sx={{ display: { xs: 'none', md: 'flex' }, color: 'black' }}>
                         {/* Home */}
                         <Box>
-                            <NavLink >
+                            <NavLink>
                                 Home
                             </NavLink>
-
                         </Box>
 
                         {/* Our Services */}
-                        <Box >
-                            <NavLink >
+                        <Box>
+                            <NavLink>
                                 Our Services
                             </NavLink>
-
-
                         </Box>
 
                         {/* About */}
-                        <Box >
-                            <NavLink >
+                        <Box>
+                            <NavLink>
                                 About
                             </NavLink>
-
                         </Box>
 
                         {/* Contact */}
-                        <Box >
-                            <NavLink >
+                        <Box>
+                            <NavLink>
                                 Contact
                             </NavLink>
-
                         </Box>
 
                         {/* Company */}
@@ -167,40 +165,35 @@ function GloumNavbar() {
                     </IconButton>
                     <List>
                         {/* Home */}
-                        <ListItem >
-                            <ListItemText primary="Home" />
-
+                        <ListItem button>
+                            <StyledListItemText primary="Home" />
                         </ListItem>
 
-
                         {/* Our Services */}
-                        <ListItem button >
-                            <ListItemText primary="Our Services" />
-
+                        <ListItem button>
+                            <StyledListItemText primary="Our Services" />
                         </ListItem>
 
                         {/* About */}
-                        <ListItem >
-                            <ListItemText primary="About" />
-
+                        <ListItem button>
+                            <StyledListItemText primary="About" />
                         </ListItem>
-
 
                         {/* Our Company */}
                         <ListItem button onClick={handleToggle(setOurCompany)}>
-                            <ListItemText primary="Our Company" />
+                            <StyledListItemText primary="Our Company" />
                             {OurCompany ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
                         <Collapse in={OurCompany} timeout="auto" unmountOnExit>
                             <List component="div" disablePadding>
                                 <ListItem button component={Link} to="/careers">
-                                    <ListItemText primary="Careers" />
+                                    <StyledListItemText primary="Careers" />
                                 </ListItem>
                                 <ListItem button component={Link} to="/blog">
-                                    <ListItemText primary="Blog" />
+                                    <StyledListItemText primary="Blog" />
                                 </ListItem>
                                 <ListItem button component={Link} to="/mission">
-                                    <ListItemText primary="Mission" />
+                                    <StyledListItemText primary="Mission" />
                                 </ListItem>
                             </List>
                         </Collapse>
