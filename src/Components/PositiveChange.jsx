@@ -45,7 +45,7 @@ const PositiveChange = () => {
     };
 
     return (
-        <Box sx={{ backgroundColor: '#e64b50', color: '#fff', p: 4, borderRadius: '15px' }}>
+        <Box sx={{ backgroundColor: '#e64b50', minHeight: '65vh', color: '#fff', p: 4 }}>
             <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
                     <Box sx={{ textAlign: 'center', mb: 2 }}>
@@ -59,7 +59,8 @@ const PositiveChange = () => {
                                 lineHeight: '1px',
                                 margin: '0 auto',
                                 fontSize: { xs: '20px', md: '25px', lg: '15px', },
-                                width: { xs: '90%', md: '80%', lg: '30%', sm:'100%' },
+                                width: { xs: '90%', md: '80%', lg: '50%' },
+                                maxWidth: '400px',
                                 textAlign: 'center',
                                 p: 2,
                             }}
@@ -108,7 +109,9 @@ const PositiveChange = () => {
                             position: 'relative', 
                             textAlign: 'center', 
                             mb: 2, 
-                            width: '200px' 
+                            width: '200px',
+                            minWidth: '180px',
+                            maxWidth: '240px',
                         }}
                     >
                         <Box 
@@ -158,7 +161,12 @@ const PositiveChange = () => {
             <Box sx={{ textAlign: 'center', mt: 6 }}>
                 <Button
                     variant="contained"
-                    sx={{ backgroundColor: '#000', color: '#fff', width: { xs: '100%', sm: '50%', lg: '10%' } }}
+                    sx={{ 
+                        backgroundColor: '#000', 
+                        color: '#fff', 
+                        width: { xs: '100%', sm: '50%', lg: '200px' }, 
+                        maxWidth: '300px', 
+                    }}
                     onClick={handleContactClick}
                 >
                     Contact Us

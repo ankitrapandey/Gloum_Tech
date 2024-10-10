@@ -48,7 +48,7 @@ const GloumTestimonial = () => {
   }, [currentTestimonial]);
 
   return (
-    <Box p={4} bgcolor="#212121" color="white" borderRadius={2} width="90%" mx="auto" marginTop={4}>
+    <Box p={4} bgcolor="#212121" color="white" borderRadius={2} width="full" mx="auto" marginTop={4}>
       <Grid container spacing={3} alignItems="center">
         {/* Left side: static text */}
         <Grid item xs={12} md={6}>
@@ -81,9 +81,9 @@ const GloumTestimonial = () => {
               justifyContent="center"
               textAlign="center"
               sx={{
-                maxHeight: '500px', // Sets an upper limit for height to avoid overflow
-                transition: 'max-height 1s ease-in-out', // Smooth height transition
-                overflow: 'hidden', // Ensures that content doesn't overflow during transitions
+                height: '300px', // Set a fixed height to prevent movement
+                transition: 'opacity 1s ease-in-out',
+                overflow: 'hidden', // Prevent overflow
               }}
             >
               <Fade in={checked} timeout={500}>

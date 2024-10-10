@@ -1,180 +1,201 @@
 
 
+
+
+
 import React, { useState } from 'react';
-import {
-  TextField,
-  Button,
-  Grid,
-  Typography,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Checkbox,
-  FormControlLabel
-} from '@mui/material';
+import { Box, TextField, Button, Typography, Grid } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  container: {
+    maxWidth: '1000px',
+    margin: '50px auto',
+    borderRadius: '8px',
+    overflow: 'hidden',
+    boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',
+  },
+  contactInfo: {
+    backgroundColor: '#00a0df',
+    color: 'white',
+    height: '70vh',
+    padding: '20px',
+    borderRadius: '10px',
+  },
+  formContainer: {
+    padding: '40px',
+    backgroundColor: '#FFFFFFD1',
+  },
+  inputField: {
+    marginBottom: '20px',
+    '& .MuiInputBase-root': {
+      border: 'none',
+      borderBottom: '1px solid #ccc',
+      borderRadius: '0',
+      '&:hover': {
+        borderBottom: '1px solid #00a0df',
+      },
+      '&.Mui-error': {
+        borderBottom: '1px solid red',
+      },
+      '&.Mui-focused': {
+        borderBottom: '1px solid #00a0df',
+      },
+    },
+  },
+  submitButton: {
+    height: '7vh',
+    width:'30vw',
+    background: 'linear-gradient(to right, #e0c3fc, #8ec5fc)',
+    color: 'white',
+    fontSize: '16px',
+    borderRadius: '15px',
+    marginTop: '40px', // Margin added
+  },
+});
 
 const ContactForm = () => {
+  const classes = useStyles();
   const [formData, setFormData] = useState({
-    fullName: '',
+    firstName: '',
     email: '',
     phoneNumber: '',
-    company: '',
-    budget: '',
+    subject: '',
     message: '',
-    agree: false,
   });
 
-  const [errors, setErrors] = useState({}); // State for error messages
+  const [errors, setErrors] = useState({
+    firstName: false,
+    email: false,
+    phoneNumber: false,
+    subject: false,
+    message: false,
+  });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: '' }); // Clear error on change
-  };
-
-  const handleCheckboxChange = (e) => {
-    setFormData({ ...formData, agree: e.target.checked });
-    setErrors({ ...errors, agree: '' }); // Clear error on checkbox change
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newErrors = {};
+    const newErrors = {
+      firstName: formData.firstName === '',
+      email: formData.email === '',
+      phoneNumber: formData.phoneNumber === '',
+      subject: formData.subject === '',
+      message: formData.message === '',
+    };
+    setErrors(newErrors);
 
-    // Validate required fields
-    if (!formData.fullName) newErrors.fullName = 'Full Name is required';
-    if (!formData.email) newErrors.email = 'Email is required';
-    if (!formData.phoneNumber) newErrors.phoneNumber = 'Phone Number is required';
-    if (!formData.message) newErrors.message = 'Message is required';
-    if (!formData.agree) newErrors.agree = 'You must agree to the privacy policy';
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return; // Stop form submission if there are errors
+    if (!Object.values(newErrors).includes(true)) {
+      console.log('Form submitted successfully!', formData);
+      // Add your form submission logic here
     }
-
-    console.log('Form submitted:', formData);
-    // Add logic to send form data to your backend
   };
 
   return (
-    <Grid container spacing={3} justifyContent="center">
-      <Grid item xs={12}>
-        <Typography variant="h4" align="center">Contact Us</Typography>
-        <Typography variant="subtitle1" align="center">
-          Whether you need a solution or have a doubt, we are happy to help you.
-        </Typography>
-      </Grid>
-      <Grid item xs={10} md={6}>
-        <form onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+    <Box className={classes.container}>
+      <Grid container spacing={3}>
+        {/* Contact Info Section */}
+        <Grid item xs={12} md={5}>
+          <Box className={classes.contactInfo}>
+            <Typography variant="h5" gutterBottom>
+              Contact Information
+            </Typography>
+            <Typography>Infograins</Typography>
+            <Typography>Email</Typography>
+            <Typography>
+              <a href="mailto:info@gloumtech.com" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>
+                info@gloumtech.com
+              </a>
+            </Typography>
+            <Typography>Phone</Typography>
+            <Typography>
+              <a href="tel:+44 7961 927827" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>
+                UK +44 7961 927827
+              </a>
+            </Typography>
+          </Box>
+        </Grid>
+
+        {/* Form Section */}
+        <Grid item xs={12} md={7}>
+          <Box className={classes.formContainer}>
+            <form onSubmit={handleSubmit}>
               <TextField
+                name="firstName"
+                label="First Name"
                 fullWidth
-                label="Full Name"
-                name="fullName"
-                variant="outlined"
-                value={formData.fullName}
+                variant="standard"
+                className={classes.inputField}
+                value={formData.firstName}
                 onChange={handleChange}
-                error={Boolean(errors.fullName)} // Set error state
-                helperText={errors.fullName} // Display error message
-                required
+                error={errors.firstName}
+                helperText={errors.firstName ? 'First Name is required' : ''}
+                InputProps={{ disableUnderline: true}}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
               <TextField
-                fullWidth
-                label="Email"
                 name="email"
-                type="email"
-                variant="outlined"
+                label="Email address"
+                fullWidth
+                variant="standard"
+                className={classes.inputField}
                 value={formData.email}
                 onChange={handleChange}
-                error={Boolean(errors.email)}
-                helperText={errors.email}
-                required
+                error={errors.email}
+                helperText={errors.email ? 'Email is required' : ''}
+                InputProps={{ disableUnderline: true }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
               <TextField
-                fullWidth
-                label="Phone Number"
                 name="phoneNumber"
-                variant="outlined"
+                label="Phone Number"
+                fullWidth
+                variant="standard"
+                className={classes.inputField}
                 value={formData.phoneNumber}
                 onChange={handleChange}
-                error={Boolean(errors.phoneNumber)}
-                helperText={errors.phoneNumber}
-                required
+                error={errors.phoneNumber}
+                helperText={errors.phoneNumber ? 'Phone Number is required' : ''}
+                InputProps={{ disableUnderline:true }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
               <TextField
+                name="subject"
+                label="Subject"
                 fullWidth
-                label="Company"
-                name="company"
-                variant="outlined"
-                value={formData.company}
+                variant="standard"
+                className={classes.inputField}
+                value={formData.subject}
                 onChange={handleChange}
+                error={errors.subject}
+                helperText={errors.subject ? 'Subject is required' : ''}
+                InputProps={{ disableUnderline: true }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControl fullWidth variant="outlined" error={Boolean(errors.budget)}>
-                <InputLabel>Budget (USD)</InputLabel>
-                <Select
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  label="Budget (USD)"
-                >
-                  <MenuItem value="">
-                    <em>Select Budget</em>
-                  </MenuItem>
-                  <MenuItem value={1000}>$1,000</MenuItem>
-                  <MenuItem value={5000}>$5,000</MenuItem>
-                  <MenuItem value={10000}>$10,000</MenuItem>
-                </Select>
-                {errors.budget && <Typography color="error">{errors.budget}</Typography>}
-              </FormControl>
-            </Grid>
-            <Grid item xs={12}>
               <TextField
-                fullWidth
-                label="Your Message"
                 name="message"
-                multiline
-                rows={4}
-                variant="outlined"
+                label="Your Message"
+                fullWidth
+                // multiline
+                // rows={4}
+                variant="standard"
+                className={classes.inputField}
                 value={formData.message}
                 onChange={handleChange}
-                error={Boolean(errors.message)}
-                helperText={errors.message}
-                required
+                error={errors.message}
+                helperText={errors.message ? 'Message is required' : ''}
+                InputProps={{ disableUnderline: true }}
               />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={formData.agree}
-                    onChange={handleCheckboxChange}
-                    required
-                    color="primary"
-                  />
-                }
-                label="By submitting the form, I agree to the privacy policy and give my consent to receive emails/phone calls."
-              />
-              {errors.agree && <Typography color="error">{errors.agree}</Typography>}
-            </Grid>
-            <Grid item xs={12}>
-              <Button type="submit" variant="contained" color="primary" fullWidth>
-                Send
-              </Button>
-            </Grid>
-          </Grid>
-        </form>
+              {/* Centered Button */}
+              <Box  display="flex" justifyContent="center" marginTop={10}>
+                <Button type="submit" className={classes.submitButton}>
+                  Send
+                </Button>
+              </Box>
+            </form>
+          </Box>
+        </Grid>
       </Grid>
-    </Grid>
+    </Box>
   );
 };
 

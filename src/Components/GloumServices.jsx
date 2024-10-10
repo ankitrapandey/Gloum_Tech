@@ -103,6 +103,7 @@ const GloumServices = () => {
     <Box
       sx={{
         backgroundColor: '#000',
+        marginTop:'1rem',
         backgroundImage: 'url(https://infograins.com/static/media/services.d445a0e50242b0d8ddf0.png)',
         backgroundPosition: '50%',
         backgroundRepeat: 'no-repeat',
