@@ -1,8 +1,5 @@
 
 
-
-
-
 import React, { useState } from 'react';
 import { Box, TextField, Button, Typography, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -27,7 +24,7 @@ const useStyles = makeStyles({
     backgroundColor: '#FFFFFFD1',
   },
   inputField: {
-    marginBottom: '20px',
+    marginBottom: '40px',
     '& .MuiInputBase-root': {
       border: 'none',
       borderBottom: '1px solid #ccc',
@@ -103,7 +100,7 @@ const ContactForm = () => {
             <Typography variant="h5" gutterBottom>
               Contact Information
             </Typography>
-            <Typography>Infograins</Typography>
+            <Typography>GloumTech</Typography>
             <Typography>Email</Typography>
             <Typography>
               <a href="mailto:info@gloumtech.com" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>

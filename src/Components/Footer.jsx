@@ -328,9 +328,9 @@ const Footer = () => {
           </Typography>
           <Box sx={{ mt: 0.5 }}>
             {[
-              { href: "tel:+917314258093", text: "+91 731-4258093", icon: <Phone /> },
+              { href: "tel:+917314258093", text: "+44 7961 927827", icon: <Phone /> },
               { href: "tel:+919589706590", text: "+91 9589706590", icon: <Phone /> },
-              { href: "mailto:mail@parkhya.com", text: "mail@parkhya.com", icon: <Email /> },
+              { href: "mailto:gloumtech@.com", text: "gloumtech@.com", icon: <Email /> },
               { href: "https://www.google.com/maps/search/?api=1&query=206,+Atulya+IT+Park,+Khandwa+Road,+Indore+-+452014", text: "206, Atulya IT Park, Khandwa Road, Indore - 452014", icon: <LocationOn /> },
               { href: "https://www.google.com/maps/search/?api=1&query=121,+Devi+Ahilya+Marg,+Bhandari+Mill+Square,+Indore+-+452003", text: "121, Devi Ahilya Marg, Bhandari Mill Square, Indore - 452003", icon: <LocationOn /> },
             ].map((contact, index) => (

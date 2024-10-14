@@ -38,14 +38,14 @@ const GloumFooter = () => {
                 <CardContent>
                   <Typography variant="h6" sx={headerStyle}>INDIA</Typography>
                   <Typography variant="body2" sx={contactTextStyle}>
-                    <Link href="tel:+917314972583" sx={contactLinkStyle}>+91 93453 58709</Link><br />
+                    <Link href="tel:+44 7961 927827" sx={contactLinkStyle}>+44 7961 927827</Link><br />
                     <Link href="mailto:info@softude.com" sx={contactLinkStyle}>info@Gloumtech.com</Link><br />
                     <LocationOn sx={{ color: 'red', marginRight: '4px', verticalAlign: 'middle' }} /> {/* Red location icon */}
                     <Link
                       href="https://www.google.com/maps/place/%E0%A4%B0%E0%A5%80%E0%A4%B5%E0%A4%BE,+%E0%A4%AE%E0%A4%A7%E0%A5%8D%E0%A4%AF+%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A6%E0%A5%87%E0%A4%B8/@24.5406421,81.3030767,15z/data=!3m1!4b1!4m6!3m5!1s0x39845a348b85dbbd:0xbc368e68a40a6da9!8m2!3d24.5362477!4d81.3036946!16zL20vMDNwY2J6?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"
                       target="_blank" sx={contactLinkStyle}
                     >
-                      Corporate Park, 14th Floor, Plot No. 25, Rewa, MP, India
+                      Corporate Park, 14th Floor, Plot No. 25, India
                     </Link>
                   </Typography>
                 </CardContent>
