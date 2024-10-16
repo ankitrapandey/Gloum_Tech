@@ -1,6 +1,5 @@
 
 
-
 import React from 'react';
 import { Grid, Card, CardContent, Typography, Button, Box } from '@mui/material';
 
@@ -91,6 +90,25 @@ const Services = () => {
                   {service.description}
                 </Typography>
                 <Box sx={{ display: 'flex', gap: '1rem' }}>
+                  {/* "Learn More" Button */}
+                  <Button
+                    variant="contained"
+                    sx={{
+                      textTransform: 'none',
+                      borderRadius: '20px',
+                      padding: '0.5rem 1.5rem',
+                      color: '#fff',
+                      background: 'linear-gradient(45deg, #c084fc, #f79e1b)', // Gradient background
+                      '&:hover': {
+                        backgroundColor: 'black', // Black background on hover
+                        color: '#fff',
+                      },
+                    }}
+                  >
+                    Read More &#8594;
+                  </Button>
+
+                  {/* "Get a Quote" Button */}
                   <Button
                     variant="outlined"
                     sx={{

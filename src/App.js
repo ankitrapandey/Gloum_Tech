@@ -18,6 +18,18 @@ import GloumSuccess from './Components/GloumSuccess';
 import Footer from './Components/Footer';
 import GloumNavbar from './Components/GloumNavbar';
 import Form from './Components/Form';
+import MobileAppSection from './Components/MobileAppSection';
+import AppDevelopmentServices from './Components/AppDevelopmentServices';
+import Technologies from './Components/Technologies';
+import ProcessSteps from './Components/ProcessSteps';
+import TrustUs from './Components/TrustUs';
+import FaqSection from './Components/FaqSection';
+import WebAppSection from './Components/WebAppSection';
+import WebAppServices from './Components/WebAppServices';
+import WebSolution from './Components/WebSolution';
+import OurProcess from './Components/OurProcess';
+import WebTrustUs from './Components/WebTrustUs';
+import WebFaq from './Components/WebFaq';
 
 function App() {
   return (
@@ -36,13 +48,27 @@ function App() {
       {/* <ContactForm /> */}
     {/* <DevelopmentCenter/> */}
 
-<GloumNavbar/>
-<GloumContact/>
-<Services/>
+{/* <GloumNavbar/> */}
+{/* <GloumContact/> */}
+
+{/* <Services/>
+<MobileAppSection/>
+<AppDevelopmentServices/> */}
+<Technologies/>
+{/* <ProcessSteps/>
+<TrustUs/> */}
+{/* <FaqSection/> */}
+
+<WebAppSection/>
+<WebAppServices/>
+<WebSolution/>
+<OurProcess/>
+<WebTrustUs/>
+<WebFaq/>
 {/* <GloumValue/> */}
-<GloumSuccess/>
-<Form/>
-<Footer/>
+{/* <GloumSuccess/> */}
+{/* <Form/> */}
+{/* <Footer/> */}
     </div>
   );
 }
