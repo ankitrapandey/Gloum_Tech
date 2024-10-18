@@ -1,55 +1,72 @@
 
+
+
+
 import React from 'react';
 import { Box, Typography, Grid, Paper } from '@mui/material';
 import AndroidIcon from '@mui/icons-material/Android';
 import AppleIcon from '@mui/icons-material/Apple';
 import DevicesIcon from '@mui/icons-material/Devices';
-import FlutterDashIcon from '@mui/icons-material/FlutterDash'; // Icon for Flutter
+import FlutterDashIcon from '@mui/icons-material/FlutterDash';
 
 const AppDevelopmentServices = () => {
     return (
-        <Box sx={{ backgroundColor: '#F7F7F7', p: 4 }}>
-            <Typography variant="h4" align="center" gutterBottom>
+        <Box
+            sx={{
+                backgroundColor: '#F7F7F7',
+                p: 4,
+                backgroundImage: 'url(https://cdn.prod.website-files.com/631ec5866e474e5b101f6a41/6322e52da962a70b7f34a8d1_web-app-services-bg.svg)',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'auto',
+            }}
+        >
+            <Typography sx={{fontSize:'36px',color:'#OOOOOO'}}  align="center" gutterBottom>
                 Our Mobile App Development Services
             </Typography>
-            <Typography variant="body1" align="center" sx={{ mb: 4 }}>
-                The current mobile landscape demands apps that are not only functional but also emotionally resonant with
-                customers. Softude is a cross-platform mobile app development company in the USA, with a prime focus on a
-                customer-centric approach. We build mobile apps that serve as an extension of our clients’ brands and engage
+            <Typography  align="center" sx={{ mb: 4,fontSize:'14px',color:'#OOOOOO' }}>
+                The current mobile landscape demands apps that are not only functional but also emotionally resonant with<br/>
+                customers. Softude is a cross-platform mobile app development company in the USA, with a prime focus on a<br/>
+                customer-centric approach. We build mobile apps that serve as an extension of our clients’ brands and engage<br/>
                 customers to become active participants in their shared digital transformation journey.
             </Typography>
-            <Grid container spacing={3} justifyContent="center">
+            <Grid container spacing={8} justifyContent="center">
                 {/* Android App Development */}
                 <Grid item xs={12} sm={6} md={3}>
                     <Paper
                         elevation={3}
                         sx={{
                             p: 3,
-                            textAlign: 'center',
+                            textAlign: 'left',
                             transition: 'transform 0.3s, background-color 0.3s',
+                            height: '100%', // Uniform height
                             '&:hover': {
-                                background: 'linear-gradient(to right, #e0c3fc, #8ec5fc)',
-                                transform: 'scale(1.05)', // zoom effect on hover
+                                color:'white',
+                                background: '#e64b50',
+                                transform: 'scale(1.05)',
                             },
                         }}
                     >
                         <Box
                             sx={{
                                 display: 'flex',
-                                justifyContent: 'center',
                                 alignItems: 'center',
-                                transition: 'transform 0.3s',
-                                '&:hover': {
-                                    transform: 'scale(1.2)', // zoom effect on icon hover
-                                },
                             }}
                         >
-                            <AndroidIcon sx={{ fontSize: 40, color: '#3DDC84' }} />
+                            <AndroidIcon
+                                sx={{
+                                    fontSize: 30,
+                                    color: '#3DDC84',
+                                    backgroundColor: '#E0F2F1', 
+                                    borderRadius: '50%', 
+                                    p: 1,
+                                    mr: 2, 
+                                }}
+                            />
+                            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                                Android App Development
+                            </Typography>
                         </Box>
-                        <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 2 }}>
-                            Android App Development
-                        </Typography>
-                        <Typography variant="body2">
+                        <Typography variant="body2" sx={{ mt: 2 }}>
                             Give your business global exposure by reaching billions of potential customers who prefer Android devices.
                             With our Android app development services, you can launch apps faster, and save the development cost.
                         </Typography>
@@ -62,32 +79,37 @@ const AppDevelopmentServices = () => {
                         elevation={3}
                         sx={{
                             p: 3,
-                            textAlign: 'center',
+                            textAlign: 'left',
                             transition: 'transform 0.3s, background-color 0.3s',
+                            height: '100%', // Uniform height
                             '&:hover': {
-                               background: 'linear-gradient(to right, #e0c3fc, #8ec5fc)',
-                              
-                                transform: 'scale(1.05)', // zoom effect on hover
+                                color:'white',
+                                background: '#e64b50',
+                                transform: 'scale(1.05)',
                             },
                         }}
                     >
                         <Box
                             sx={{
                                 display: 'flex',
-                                justifyContent: 'center',
                                 alignItems: 'center',
-                                transition: 'transform 0.3s',
-                                '&:hover': {
-                                    transform: 'scale(1.2)', // zoom effect on icon hover
-                                },
                             }}
                         >
-                            <AppleIcon sx={{ fontSize: 40, color: '#000' }} />
+                            <AppleIcon
+                                sx={{
+                                    fontSize: 30,
+                                    color: '#000',
+                                    backgroundColor: '#F0F0F0',
+                                    borderRadius: '50%',
+                                    p: 1,
+                                    mr: 2,
+                                }}
+                            />
+                            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                                iOS App Development
+                            </Typography>
                         </Box>
-                        <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 2 }}>
-                            iOS App Development
-                        </Typography>
-                        <Typography variant="body2">
+                        <Typography variant="body2" sx={{ mt: 2 }}>
                             Target the premium audience and increase your average revenue per user with our iOS app development. We
                             build applications that run smoothly on any Apple device and are designed with Apple design guidelines,
                             giving users a stunning device experience.
@@ -101,32 +123,38 @@ const AppDevelopmentServices = () => {
                         elevation={3}
                         sx={{
                             p: 3,
-                            textAlign: 'center',
+                            textAlign: 'left',
                             transition: 'transform 0.3s, background-color 0.3s',
+                            height: '100%', // Uniform height
                             '&:hover': {
-                                background: 'linear-gradient(to right, #e0c3fc, #8ec5fc)', // Gradient background
-                            
-                                transform: 'scale(1.05)', // zoom effect on hover
+                                color:'white',
+                                background: '#e64b50',
+                                transform: 'scale(1.05)',
                             },
                         }}
                     >
                         <Box
                             sx={{
                                 display: 'flex',
-                                justifyContent: 'center',
                                 alignItems: 'center',
-                                transition: 'transform 0.3s',
-                                '&:hover': {
-                                    transform: 'scale(1.2)', // zoom effect on icon hover
-                                },
                             }}
                         >
-                            <DevicesIcon sx={{ fontSize: 40, color: '#61DAFB' }} />
+                            <DevicesIcon
+                                sx={{
+                                    fontSize: 30,
+                                    color: '#61DAFB',
+                                    backgroundColor: '#E3F2FD',
+                                    borderRadius: '50%',
+                                    p: 1,
+                                    mr: 2,
+                                    
+                                }}
+                            />
+                            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                                React Native App Development
+                            </Typography>
                         </Box>
-                        <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 2 }}>
-                            React Native App Development
-                        </Typography>
-                        <Typography variant="body2">
+                        <Typography variant="body2" sx={{ mt: 2 }}>
                             Expand your audience with a single mobile app. By choosing React native app development, businesses can
                             target both Android and iOS users while giving them a smooth and responsive app experience.
                         </Typography>
@@ -139,32 +167,37 @@ const AppDevelopmentServices = () => {
                         elevation={3}
                         sx={{
                             p: 3,
-                            textAlign: 'center',
+                            textAlign: 'left',
                             transition: 'transform 0.3s, background-color 0.3s',
+                            height: '100%', // Uniform height
                             '&:hover': {
-                               background: 'linear-gradient(to right, #e0c3fc, #8ec5fc)',
+                                color:'white',
+                                background: '#e64b50',
                                 transform: 'scale(1.05)',
-                               
                             },
                         }}
                     >
                         <Box
                             sx={{
                                 display: 'flex',
-                                justifyContent: 'center',
                                 alignItems: 'center',
-                                transition: 'transform 0.3s',
-                                '&:hover': {
-                                    transform: 'scale(1.2)', // zoom effect on icon hover
-                                },
                             }}
                         >
-                            <FlutterDashIcon sx={{ fontSize: 40, color: '#02569B' }} />
+                            <FlutterDashIcon
+                                sx={{
+                                    fontSize: 30,
+                                    color: '#02569B',
+                                    backgroundColor: '#E0F7FA',
+                                    borderRadius: '50%',
+                                    p: 1,
+                                    mr: 2,
+                                }}
+                            />
+                            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                                Flutter App Development
+                            </Typography>
                         </Box>
-                        <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 2 }}>
-                            Flutter App Development
-                        </Typography>
-                        <Typography variant="body2">
+                        <Typography variant="body2" sx={{ mt: 2 }}>
                             Take advantage of Google's fast and dynamic Flutter framework to create high-performance apps. Reach both
                             Android and iOS platforms with a single codebase, reducing development time and cost.
                         </Typography>
@@ -176,3 +209,4 @@ const AppDevelopmentServices = () => {
 };
 
 export default AppDevelopmentServices;
+

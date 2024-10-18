@@ -1,61 +1,97 @@
 
+
 import React from 'react';
 import { Box, Grid, Typography, Button } from '@mui/material';
 
 const WebAppSection = () => {
   return (
-    <Box sx={{ backgroundColor: '#f5f5f5', padding: '4rem 2rem' }}>
-      <Grid 
-        container 
-        alignItems="center" 
-        justifyContent="center" // Centers the grid items horizontally
+    <Box sx={{ backgroundColor: '#f5f5f5', padding: { xs: '2rem', sm: '4rem 2rem' } }}>
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
         spacing={4}
+        sx={{
+          flexDirection: { xs: 'column', sm: 'column', md: 'row' }, // Stack on small screens, row on large
+        }}
       >
-        {/* Left section: Text and Button */}
-        <Grid 
-          item 
-          xs={12} 
-          md={6} 
-          sx={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center',  // Centers the content vertically
-            textAlign: 'center',   // Centers the text
-            px: 2                 // Adds padding on left and right
+        {/* Image section (at top for mobile view) */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            display: 'flex',
+            justifyContent: { xs: 'center', md: 'flex-end' }, // Center image on mobile, right on large screens
+            alignItems: 'center',
+            mb: { xs: 4, sm: 4, md: 0 }, // Margin bottom for small screens, none for large
+            order: { xs: 1, md: 2 }, // Image first on small screens, second on large
           }}
         >
-          <Typography 
-            variant="h3" 
-            sx={{ 
-              fontWeight: 'bold', 
-              marginBottom: '1rem', 
-              fontSize: { xs: '2rem', md: '3rem' } 
+          <Box
+            component="img"
+            src="https://cdn.prod.website-files.com/631ec5866e474e5b101f6a41/65a7da3f546be85bf75a3a04_Web%20app%20development%20image-p-500.webp" // Replace with your image source
+            alt="web app example"
+            sx={{
+              maxWidth: { xs: '80%', sm: '60%', md: '100%' }, // Responsive image size
+              height: 'auto',
+            }}
+          />
+        </Grid>
+
+        {/* Text and Button section */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: { xs: 'center', sm: 'center', md: 'flex-start' }, // Center text and button on small, left on large
+            alignItems: { xs: 'center', sm: 'center', md: 'flex-start' }, // Center on small screens, left on large
+            textAlign: { xs: 'center', sm: 'center', md: 'left' }, // Center text on small, left on large
+            px: { xs: 2, sm: 6, md: 10 }, // Responsive padding
+            order: { xs: 2, md: 1 }, // Text second on small screens, first on large
+          }}
+        >
+          <Typography
+            variant="h3"
+            sx={{
+              color: '#000',
+              fontFamily: 'Satoshi Black, sans-serif',
+              fontSize: { xs: '32px', sm: '40px', md: '43px' }, // Responsive font size
+              fontWeight: 900,
+              lineHeight: { xs: '40px', sm: '50px', md: '60px' }, // Responsive line height
+              marginBottom: '1rem',
+              maxWidth: '850px',
             }}
           >
+           
             Turning Every Web<br /> 
             Interaction Into a <br />
             Business Success Story
           </Typography>
-          <Typography 
-            variant="body1" 
-            sx={{ 
-              marginBottom: '2rem', 
-              color: '#555', 
-              fontSize: { xs: '1rem', md: '1.2rem' } 
+          <Typography
+            sx={{
+              marginBottom: '2rem',
+              color: '#555',
+              fontSize: { xs: '0.9rem', sm: '1rem', md: '1.2rem', lg: '15px' }, // Responsive text size
             }}
           >
-            A web app development company that creates digital solutions that<br />
-            perfectly fit your business requirements and enhance customer experience.
+             A web app development company that creates digital solutions that perfectly fit your business requirements and enhance customer experience.
           </Typography>
-          <Button 
-            variant="contained" 
-            sx={{ 
-              backgroundColor: '#000', 
-              color: '#fff', 
-              padding: '0.75rem 2rem', 
-              borderRadius: '5px', 
-              textTransform: 'none',
-              fontSize: '1rem',
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: '#000000',
+              color: '#FFFFFF',
+              letterSpacing: '1px',
+              borderRadius: '2px',
+              padding: { xs: '10px 20px', sm: '12px 25px' }, // Responsive button padding
+              fontFamily: 'Satoshi Bold, sans-serif',
+              fontSize: { xs: '12px', sm: '14px' }, // Responsive button text
+              fontWeight: 700,
+              transition: 'all .3s',
               '&:hover': {
                 backgroundColor: '#333',
               },
@@ -63,29 +99,6 @@ const WebAppSection = () => {
           >
             Contact Us
           </Button>
-        </Grid>
-
-        {/* Right section: Image */}
-        <Grid 
-          item 
-          xs={12} 
-          md={6} 
-          sx={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            px: 2  // Adds padding to the image container as well
-          }}
-        >
-          <Box
-            component="img"
-            src="https://cdn.prod.website-files.com/631ec5866e474e5b101f6a41/65a7da3f546be85bf75a3a04_Web%20app%20development%20image-p-500.webp" // Replace with your image
-            alt="Web app example 1"
-            sx={{ 
-              height: 'auto', 
-              width: { xs: '80%', md: '60%' }, // Adjust width for responsiveness
-              maxWidth: '100%',  // Ensures the image doesn't overflow
-            }}
-          />
         </Grid>
       </Grid>
     </Box>

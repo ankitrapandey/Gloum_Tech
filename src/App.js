@@ -30,6 +30,9 @@ import WebSolution from './Components/WebSolution';
 import OurProcess from './Components/OurProcess';
 import WebTrustUs from './Components/WebTrustUs';
 import WebFaq from './Components/WebFaq';
+import Hero from './Components/Hero';
+import PanchangCard from './Components/TodayPanchange';
+import TodayPanchang from './Components/TodayPanchange';
 
 function App() {
   return (
@@ -51,12 +54,14 @@ function App() {
 {/* <GloumNavbar/> */}
 {/* <GloumContact/> */}
 
-{/* <Services/>
+{/* <Services/> */}
 <MobileAppSection/>
-<AppDevelopmentServices/> */}
+<AppDevelopmentServices/>
 <Technologies/>
-{/* <ProcessSteps/>
-<TrustUs/> */}
+<ProcessSteps/>
+<TrustUs/>
+{/* <Hero/> */}
+{/* <TodayPanchang/> */}
 {/* <FaqSection/> */}
 
 <WebAppSection/>
@@ -64,7 +69,7 @@ function App() {
 <WebSolution/>
 <OurProcess/>
 <WebTrustUs/>
-<WebFaq/>
+{/* <WebFaq/> */}
 {/* <GloumValue/> */}
 {/* <GloumSuccess/> */}
 {/* <Form/> */}
