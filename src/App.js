@@ -33,6 +33,12 @@ import WebFaq from './Components/WebFaq';
 import Hero from './Components/Hero';
 import PanchangCard from './Components/TodayPanchange';
 import TodayPanchang from './Components/TodayPanchange';
+import Banner from './Components/UiUx/Banner';
+import UiServices from './Components/UiUx/UiServices';
+import UxServices from './Components/UiUx/UxServices';
+import BackendApiBanner from './Components/BackendApiDevelopment/BackendApiBanner';
+import BackendApiServices from './Components/BackendApiDevelopment/BackendApiServices';
+import BackendApiQuestion from './Components/BackendApiDevelopment/BackendApiQuestion';
 
 function App() {
   return (
@@ -55,25 +61,36 @@ function App() {
 {/* <GloumContact/> */}
 
 {/* <Services/> */}
-<MobileAppSection/>
+{/* <MobileAppSection/>
 <AppDevelopmentServices/>
 <Technologies/>
 <ProcessSteps/>
-<TrustUs/>
+<TrustUs/> */}
 {/* <Hero/> */}
 {/* <TodayPanchang/> */}
 {/* <FaqSection/> */}
 
-<WebAppSection/>
+{/* <WebAppSection/>
 <WebAppServices/>
 <WebSolution/>
 <OurProcess/>
-<WebTrustUs/>
+<WebTrustUs/> */}
 {/* <WebFaq/> */}
 {/* <GloumValue/> */}
 {/* <GloumSuccess/> */}
 {/* <Form/> */}
 {/* <Footer/> */}
+
+
+{/* <Banner/>
+<UiServices/>
+<UxServices/> */}
+
+<BackendApiBanner/>
+<BackendApiServices/>
+<BackendApiQuestion/>
+
+
     </div>
   );
 }

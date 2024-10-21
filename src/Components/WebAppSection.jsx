@@ -5,7 +5,7 @@ import { Box, Grid, Typography, Button } from '@mui/material';
 
 const WebAppSection = () => {
   return (
-    <Box sx={{ backgroundColor: '#f5f5f5', padding: { xs: '2rem', sm: '4rem 2rem' } }}>
+    <Box sx={{ backgroundColor: 'wheat', padding: { xs: '2rem', sm: '4rem 2rem' } }}>
       <Grid
         container
         alignItems="center"

@@ -1,7 +1,4 @@
 
-
-
-
 import React from 'react';
 import { Box, Typography, Grid, Paper } from '@mui/material';
 import AndroidIcon from '@mui/icons-material/Android';
@@ -13,7 +10,7 @@ const AppDevelopmentServices = () => {
     return (
         <Box
             sx={{
-                backgroundColor: '#F7F7F7',
+                backgroundColor: 'white',
                 p: 4,
                 backgroundImage: 'url(https://cdn.prod.website-files.com/631ec5866e474e5b101f6a41/6322e52da962a70b7f34a8d1_web-app-services-bg.svg)',
                 backgroundRepeat: 'no-repeat',
