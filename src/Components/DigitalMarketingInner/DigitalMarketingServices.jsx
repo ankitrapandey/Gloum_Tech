@@ -7,23 +7,23 @@ import { Box, Grid, Typography } from '@mui/material';
 const industries = [
     {
         title: 'E-commerce',
-        description: 'In the E-commerce sector, we revolutionise operations by developing robust APIs that facilitate seamless interactions between inventory management systems, payment gateways, and customer databases. Our tailored solutions ensure swift order processing, secure payment transactions, and personalized customer experiences, fostering customer retention and satisfaction.',
+        description: 'For E-commerce businesses, our Digital Marketing Services focus on optimizing product visibility through strategic SEO, engaging content, and targeted advertising. We drive traffic, improve conversion rates, and enhance the overall online shopping experience, resulting in increased sales and customer retention.',
     },
     {
         title: 'Healthcare',
-        description: 'For the Healthcare industry, Parkhya Solutions designs APIs that bridge the gap between Electronic Health Records (EHR) systems, healthcare applications, and wearable devices. Our expertise in Back-end API Development enables secure data exchange, facilitating better communication among medical professionals, streamlining processes, and ultimately enhancing patient care and treatment outcomes.',
+        description: 'In the Healthcare sector, our services aim to build trust and credibility through informative content, targeted advertising, and strategic SEO. We help healthcare providers enhance their online presence, disseminate valuable information, and engage with patients to foster trust and loyalty.',
     },
     {
         title: 'Finance',
-        description: 'In the Finance sector, our specialized APIs connect banking systems, financial databases, and third-party applications, ensuring secure data transactions, compliance with regulations, and real-time information access, empowering financial institutions with the agility to adapt to market changes and deliver enhanced services to clients.',
+        description: 'For Finance, our Digital Marketing strategies emphasize building brand authority and trust. We implement targeted content marketing, SEO strategies, and paid advertising to position financial institutions as reliable sources, enhance brand recognition, and attract potential clients.',
     },
     {
-        title: 'Transportation',
-        description: 'For the Transportation industry, we craft APIs that integrate various logistics management systems, GPS tracking, and fleet management tools. This integration streamlines operations, enhances route optimization, and enables real-time communication between different components, ensuring efficient transportation and logistics management.',
+        title: 'Education',
+        description: 'In Education, our services aim to engage students and parents through targeted content, social media engagement, and SEO strategies. We help educational institutions create compelling campaigns, improve their online visibility, and attract prospective students',
     },
     {
-        title: 'Retail',
-        description: 'In Retail, we facilitate a unified shopping experience across multiple channels by developing APIs that synchronise inventory management, customer data, and sales platforms. Our Back-end API Development solutions empower retailers to deliver consistent, personalised experiences to customers across online and offline touchpoints, driving sales and customer loyalty.',
+        title: 'Travel & Hospitality',
+        description: 'For Travel & Hospitality, our strategies focus on captivating content, visual storytelling, and targeted advertising. We aim to enhance customer engagement, inspire travel, and drive bookings through strategic SEO and captivating social media campaigns.',
     },
 ];
 
@@ -40,7 +40,7 @@ const GradientBox = ({ children, index }) => {
                 background: background,
                 p: 3,
                 borderRadius: '8px',
-                height:{xs:'350px',sm:'400px',md:'500px',lg:'400px',xl:'500px'},
+                height: { xs: '350px', sm: '400px', md: '500px', lg: '400px', xl: '500px' },
                 width: { xs: '80%', sm: '80%', md: '80%', lg: '80%' },
                 display: 'flex',
                 flexDirection: 'column',
@@ -79,7 +79,7 @@ const IndustryCard = ({ title, description, index }) => (
     </GradientBox>
 );
 
-const BackendApiServices = () => {
+const DigitalMarketingServices = () => {
     return (
         <Box sx={{ p: 7 }}>
             <Grid container spacing={4}>
@@ -94,7 +94,10 @@ const BackendApiServices = () => {
                         S E R V I C E S
                     </Typography>
                     <Typography variant="h4" gutterBottom>
-                        UI/UX Front-End Development Solutions Across Diverse Industries
+                    Digital Marketing<br/>
+                     Services Across <br/>
+                     Diverse<br/>
+                      Industries<br/>
                     </Typography>
                 </Grid>
 
@@ -113,4 +116,4 @@ const BackendApiServices = () => {
     );
 };
 
-export default BackendApiServices;
+export default DigitalMarketingServices;

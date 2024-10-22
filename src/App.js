@@ -39,6 +39,9 @@ import UxServices from './Components/UiUx/UxServices';
 import BackendApiBanner from './Components/BackendApiDevelopment/BackendApiBanner';
 import BackendApiServices from './Components/BackendApiDevelopment/BackendApiServices';
 import BackendApiQuestion from './Components/BackendApiDevelopment/BackendApiQuestion';
+import DigitalMarketingBanner from './Components/DigitalMarketingInner/DigitalMarketingBanner';
+import DigitalMarketingServices from './Components/DigitalMarketingInner/DigitalMarketingServices';
+import DigitalMarketingQuestion from './Components/DigitalMarketingInner/DigitalMarketingQuestion';
 
 function App() {
   return (
@@ -85,11 +88,14 @@ function App() {
 {/* <Banner/>
 <UiServices/>
 <UxServices/> */}
-
+{/* 
 <BackendApiBanner/>
 <BackendApiServices/>
-<BackendApiQuestion/>
+<BackendApiQuestion/> */}
 
+<DigitalMarketingBanner/>
+<DigitalMarketingServices/>
+<DigitalMarketingQuestion/>
 
     </div>
   );

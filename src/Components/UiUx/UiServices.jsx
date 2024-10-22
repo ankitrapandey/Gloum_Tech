@@ -40,7 +40,7 @@ const GradientBox = ({ children, index }) => {
         background: background, 
         p: 3,
         borderRadius: '8px',
-        height: '350px', 
+        height:{xs:'350px',sm:'400px',md:'500px',lg:'400px',xl:'500px'},
         width:{xs:'80%',sm:'80%',md:'80%',lg:'80%'}, 
         display: 'flex',
         flexDirection: 'column',
